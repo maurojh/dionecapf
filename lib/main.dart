@@ -78,7 +78,7 @@ class _MyHomePageState extends State<MyHomePage> {
     // fast, so that you can just rebuild anything that needs updating rather
     // than having to individually change instances of widgets.
     return Scaffold(
-      backgroundColor: Color.fromARGB(255, 0, 0, 0),
+      backgroundColor: const Color.fromARGB(255, 0, 0, 0),
       body: Center(
         // Center is a layout widget. It takes a single child and positions it
         // in the middle of the parent.
@@ -145,17 +145,15 @@ class _MyHomePageState extends State<MyHomePage> {
               margin: const EdgeInsets.symmetric(horizontal: 30),
               height: 30,
               alignment: Alignment.center,
-              child: const Row(
-                children: [
-                  Expanded(
-                    flex: 2,
-                    child: Text('Informe seu e-mail:'),
+              child: const TextField(
+                decoration: InputDecoration(
+                  hintText: 'E-mail',
+                  hintStyle: TextStyle(color: Colors.white),
+                  prefixIcon: Icon(
+                    Icons.email,
+                    color: Color.fromARGB(255, 198, 21, 180),
                   ),
-                  Expanded(
-                    flex: 2,
-                    child: Text('E-mail:'),
-                  ),
-                ],
+                ),
               ),
             ),
             Container(
