@@ -182,10 +182,31 @@ class _MyHomePageState extends State<MyHomePage> {
             Container(
               width: double.infinity,
               margin: const EdgeInsets.symmetric(horizontal: 30),
-              height: 30,
-              color: Colors.green,
               alignment: Alignment.center,
-              child: Text('Login'),
+              child: SizedBox(
+                width: double.infinity,
+                child: TextButton(
+                  onPressed: () {},
+                  style: const ButtonStyle(
+                    shape: MaterialStatePropertyAll(
+                      RoundedRectangleBorder(
+                        borderRadius: BorderRadius.all(Radius.circular(10)),
+                      ),
+                    ),
+                    backgroundColor: MaterialStatePropertyAll(
+                      Color.fromARGB(255, 198, 21, 180),
+                    ),
+                  ),
+                  child: const Text(
+                    'ENTRAR',
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 16,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ),
+              ),
             ),
             Expanded(
               child: Container(),
