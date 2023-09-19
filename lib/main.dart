@@ -147,6 +147,17 @@ class _MyHomePageState extends State<MyHomePage> {
               alignment: Alignment.center,
               child: const TextField(
                 decoration: InputDecoration(
+                  //contentPadding: EdgeInsets.only(top:0),
+                  enabledBorder: UnderlineInputBorder(
+                    borderSide: BorderSide(
+                      color: Color.fromARGB(255, 198, 21, 180),
+                    ),
+                  ),
+                  focusedBorder: UnderlineInputBorder(
+                    borderSide: BorderSide(
+                      color: Color.fromARGB(255, 198, 21, 180),
+                    ),
+                  ),
                   hintText: 'E-mail',
                   hintStyle: TextStyle(color: Colors.white),
                   prefixIcon: Icon(
@@ -156,22 +167,37 @@ class _MyHomePageState extends State<MyHomePage> {
                 ),
               ),
             ),
+            const SizedBox(
+              height: 15,
+            ),
             Container(
               width: double.infinity,
               margin: const EdgeInsets.symmetric(horizontal: 30),
               height: 30,
               alignment: Alignment.center,
-              child: const Row(
-                children: [
-                  Expanded(
-                    flex: 2,
-                    child: Text('Informe a senha:'),
+              child: const TextField(
+                decoration: InputDecoration(
+                  enabledBorder: UnderlineInputBorder(
+                    borderSide: BorderSide(
+                      color: Color.fromARGB(255, 198, 21, 180),
+                    ),
                   ),
-                  Expanded(
-                    flex: 2,
-                    child: Text('Senha:'),
+                  focusedBorder: UnderlineInputBorder(
+                    borderSide: BorderSide(
+                      color: Color.fromARGB(255, 198, 21, 180),
+                    ),
                   ),
-                ],
+                  hintText: 'Senha',
+                  hintStyle: TextStyle(color: Colors.white),
+                  prefixIcon: Icon(
+                    Icons.lock,
+                    color: Color.fromARGB(255, 198, 21, 180),
+                  ),
+                  suffixIcon: Icon(
+                    Icons.visibility_off,
+                    color: Color.fromARGB(255, 198, 21, 180),
+                  ),
+                ),
               ),
             ),
             const SizedBox(
