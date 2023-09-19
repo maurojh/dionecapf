@@ -11,6 +11,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(
         // This is the theme of your application.
@@ -77,15 +78,7 @@ class _MyHomePageState extends State<MyHomePage> {
     // fast, so that you can just rebuild anything that needs updating rather
     // than having to individually change instances of widgets.
     return Scaffold(
-      appBar: AppBar(
-        // TRY THIS: Try changing the color here to a specific color (to
-        // Colors.amber, perhaps?) and trigger a hot reload to see the AppBar
-        // change color while the other colors stay the same.
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        // Here we take the value from the MyHomePage object that was created by
-        // the App.build method, and use it to set our appbar title.
-        title: Text(widget.title),
-      ),
+      backgroundColor: Color.fromARGB(255, 0, 0, 0),
       body: Center(
         // Center is a layout widget. It takes a single child and positions it
         // in the middle of the parent.
@@ -106,7 +99,7 @@ class _MyHomePageState extends State<MyHomePage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             const SizedBox(
-              height: 70,
+              height: 50,
             ),
             Row(
               children: [
@@ -123,12 +116,102 @@ class _MyHomePageState extends State<MyHomePage> {
                 ),
               ],
             ),
-            const Text(
-              'You have pushed the button this many times:',
+            const SizedBox(
+              height: 20,
             ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headlineMedium,
+            const Text(
+              'Já tem cadastro?',
+              style: TextStyle(
+                fontSize: 20,
+                fontWeight: FontWeight.bold,
+                color: Colors.white,
+              ),
+            ),
+            const SizedBox(
+              height: 10,
+            ),
+            const Text(
+              'Faça seu login e make the change_',
+              style: TextStyle(
+                fontSize: 14,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            const SizedBox(
+              height: 40,
+            ),
+            Container(
+              width: double.infinity,
+              margin: const EdgeInsets.symmetric(horizontal: 30),
+              height: 30,
+              alignment: Alignment.center,
+              child: const Row(
+                children: [
+                  Expanded(
+                    flex: 2,
+                    child: Text('Informe seu e-mail:'),
+                  ),
+                  Expanded(
+                    flex: 2,
+                    child: Text('E-mail:'),
+                  ),
+                ],
+              ),
+            ),
+            Container(
+              width: double.infinity,
+              margin: const EdgeInsets.symmetric(horizontal: 30),
+              height: 30,
+              alignment: Alignment.center,
+              child: const Row(
+                children: [
+                  Expanded(
+                    flex: 2,
+                    child: Text('Informe a senha:'),
+                  ),
+                  Expanded(
+                    flex: 2,
+                    child: Text('Senha:'),
+                  ),
+                ],
+              ),
+            ),
+            const SizedBox(
+              height: 40,
+            ),
+            Container(
+              width: double.infinity,
+              margin: const EdgeInsets.symmetric(horizontal: 30),
+              height: 30,
+              color: Colors.green,
+              alignment: Alignment.center,
+              child: Text('Login'),
+            ),
+            Expanded(
+              child: Container(),
+            ),
+            Container(
+              width: double.infinity,
+              margin: const EdgeInsets.symmetric(horizontal: 30),
+              height: 30,
+              alignment: Alignment.center,
+              child: const Text('Esqueci minha senha'),
+            ),
+            Container(
+              width: double.infinity,
+              margin: const EdgeInsets.symmetric(horizontal: 30),
+              height: 30,
+              alignment: Alignment.center,
+              child: const Text(
+                'Criar conta',
+                style: TextStyle(
+                  color: Colors.green,
+                  fontWeight: FontWeight.w400,
+                ),
+              ),
+            ),
+            Expanded(
+              child: Container(),
             ),
           ],
         ),
