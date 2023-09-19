@@ -105,6 +105,24 @@ class _MyHomePageState extends State<MyHomePage> {
           // wireframe for each widget.
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
+            const SizedBox(
+              height: 70,
+            ),
+            Row(
+              children: [
+                Expanded(
+                  child: Container(),
+                ),
+                Expanded(
+                  flex: 8,
+                  child: Image.network(
+                      'http://hermes.dio.me/assets/diome/logo.png'),
+                ),
+                Expanded(
+                  child: Container(),
+                ),
+              ],
+            ),
             const Text(
               'You have pushed the button this many times:',
             ),
