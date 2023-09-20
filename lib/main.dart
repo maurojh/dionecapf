@@ -252,7 +252,8 @@ class _MyHomePageState extends State<MyHomePage> {
                     onPressed: () {
                       if (controlaEmail.text.trim() == 'email@email.com' &&
                           controlaSenha.text.trim() == '123') {
-                        Navigator.push(
+                        //Navigator.push(
+                        Navigator.pushReplacement(
                           context,
                           MaterialPageRoute(
                             builder: (context) => const MainPage(),
