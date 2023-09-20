@@ -70,6 +70,17 @@ class _MainPageState extends State<MainPage> {
             ),
           ),
         ),
+        body: PageView(
+          children: [
+            // para mudar: dois dedos no mouse do Mac
+            Container(
+              color: Colors.blueGrey,
+            ),
+            Container(
+              color: Colors.amber,
+            ),
+          ],
+        ),
       ),
     );
   }
