@@ -213,7 +213,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       Icons.lock,
                       color: Color.fromARGB(255, 198, 21, 180),
                     ),
-                    suffixIcon: InkWell(
+                    suffixIcon: GestureDetector(
                       onTap: () {
                         setState(() {
                           senhaEscondida = !senhaEscondida;
