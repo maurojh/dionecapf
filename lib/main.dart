@@ -215,7 +215,9 @@ class _MyHomePageState extends State<MyHomePage> {
                     ),
                     suffixIcon: InkWell(
                       onTap: () {
-                        senhaEscondida = !senhaEscondida;
+                        setState(() {
+                          senhaEscondida = !senhaEscondida;
+                        });
                       },
                       child: Icon(
                         senhaEscondida ? Icons.visibility_off : Icons.visibility,
