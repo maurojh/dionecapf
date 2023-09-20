@@ -146,6 +146,7 @@ class _MyHomePageState extends State<MyHomePage> {
               height: 30,
               alignment: Alignment.center,
               child: const TextField(
+                style: TextStyle(color: Colors.white),
                 decoration: InputDecoration(
                   //contentPadding: EdgeInsets.only(top:0),
                   enabledBorder: UnderlineInputBorder(
@@ -176,6 +177,7 @@ class _MyHomePageState extends State<MyHomePage> {
               height: 30,
               alignment: Alignment.center,
               child: const TextField(
+                style: TextStyle(color: Colors.white),
                 decoration: InputDecoration(
                   enabledBorder: UnderlineInputBorder(
                     borderSide: BorderSide(
