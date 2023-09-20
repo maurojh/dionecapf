@@ -63,6 +63,11 @@ class _MyHomePageState extends State<MyHomePage> {
 
   bool senhaEscondida = true;
 
+  TextEditingController controlaEmail = TextEditingController(
+    text: 'email@email.com',
+  );
+  TextEditingController controlaSenha = TextEditingController();
+
   void _incrementCounter() {
     setState(() {
       // This call to setState tells the Flutter framework that something has
@@ -155,9 +160,10 @@ class _MyHomePageState extends State<MyHomePage> {
                 height: 30,
                 alignment: Alignment.center,
                 child: TextField(
+                  controller: controlaEmail,
                   onChanged: (value) {
-                    email = value;
-                    print(email);
+                    //email = value;
+                    print(value);
                   },
                   style: const TextStyle(color: Colors.white),
                   decoration: const InputDecoration(
@@ -190,10 +196,11 @@ class _MyHomePageState extends State<MyHomePage> {
                 height: 30,
                 alignment: Alignment.center,
                 child: TextField(
+                  controller: controlaSenha,
                   obscureText: senhaEscondida,
                   onChanged: (value) {
-                    senha = value;
-                    print(senha);
+                    //senha = value;
+                    print(value);
                   },
                   style: TextStyle(color: Colors.white),
                   decoration:  InputDecoration(
@@ -238,8 +245,10 @@ class _MyHomePageState extends State<MyHomePage> {
                   width: double.infinity,
                   child: TextButton(
                     onPressed: () {
-                      print(email);
-                      print(senha);
+                      //print(email);
+                      print(controlaEmail.text);
+                      //print(senha);
+                      print(controlaSenha.text);
                     },
                     style: const ButtonStyle(
                       shape: MaterialStatePropertyAll(
