@@ -74,7 +74,8 @@ class _MainPageState extends State<MainPage> {
           ),
         ),
         body: PageView(
-          children: [
+          scrollDirection: Axis.vertical,
+          children: const [
             // para mudar: dois dedos no mouse do Mac
             Pagina1Page(),
             Pagina2Page(),
