@@ -227,7 +227,10 @@ class _MyHomePageState extends State<MyHomePage> {
                 child: SizedBox(
                   width: double.infinity,
                   child: TextButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      print(email);
+                      print(senha);
+                    },
                     style: const ButtonStyle(
                       shape: MaterialStatePropertyAll(
                         RoundedRectangleBorder(
