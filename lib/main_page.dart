@@ -1,3 +1,4 @@
+import 'package:dionecapf/dados_cadastrais.dart';
 import 'package:flutter/material.dart';
 
 class MainPage extends StatefulWidget {
@@ -28,18 +29,43 @@ class _MainPageState extends State<MainPage> {
                     width: double.infinity,
                     child: const Text('Dados cadastrais'),
                   ),
+                  onTap: () {
+                    Navigator.pop(context);
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const DadosCadastrais(
+                          texto: 'Meus dados',
+                          dados: ['Nome','Endereço'],
+                        ),
+                      ),
+                    );
+                  },
+                ),
+                Divider(),
+                SizedBox(
+                  height: 10,
+                ),
+                InkWell(
+                  child: Container(
+                    padding: const EdgeInsets.symmetric(vertical: 5),
+                    width: double.infinity,
+                    child: const Text('Termos de uso e privacidade'),
+                  ),
                   onTap: () {},
                 ),
                 Divider(),
                 SizedBox(
                   height: 10,
                 ),
-                Text('Termos de uso e privacidade'),
-                Divider(),
-                SizedBox(
-                  height: 10,
+                InkWell(
+                  child: Container(
+                    padding: const EdgeInsets.symmetric(vertical: 5),
+                    width: double.infinity,
+                    child: const Text('Configurações'),
+                  ),
+                  onTap: () {},
                 ),
-                Text('Configurações'),
               ],
             ),
           ),
