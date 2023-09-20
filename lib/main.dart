@@ -247,10 +247,13 @@ class _MyHomePageState extends State<MyHomePage> {
                   width: double.infinity,
                   child: TextButton(
                     onPressed: () {
-                      if(controlaEmail.text == 'email@email.com' &&
-                      controlaSenha.text == '123') {
+                      if(controlaEmail.text.trim() == 'email@email.com' &&
+                      controlaSenha.text.trim() == '123') {
                         debugPrint('Login efetuado com sucesso!');
                       } else {
+                        ScaffoldMessenger.of(context).showSnackBar(
+                          const SnackBar(content: Text('Erro ao efetuar login.')),
+                        );
                         debugPrint('Erro ao efetuar login.');
                       }
                       //print(email);
