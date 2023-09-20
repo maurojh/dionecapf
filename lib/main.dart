@@ -56,7 +56,10 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
+  //int _counter = 0;
+
+  String email = '';
+  String senha = '';
 
   void _incrementCounter() {
     setState(() {
@@ -65,7 +68,7 @@ class _MyHomePageState extends State<MyHomePage> {
       // so that the display can reflect the updated values. If we changed
       // _counter without calling setState(), then the build method would not be
       // called again, and so nothing would appear to happen.
-      _counter++;
+      //_counter++;
     });
   }
 
@@ -149,9 +152,13 @@ class _MyHomePageState extends State<MyHomePage> {
                 margin: const EdgeInsets.symmetric(horizontal: 30),
                 height: 30,
                 alignment: Alignment.center,
-                child: const TextField(
-                  style: TextStyle(color: Colors.white),
-                  decoration: InputDecoration(
+                child: TextField(
+                  onChanged:(value) {
+                    email = value;
+                    print(email);
+                  },
+                  style: const TextStyle(color: Colors.white),
+                  decoration: const InputDecoration(
                     //contentPadding: EdgeInsets.only(top:0),
                     enabledBorder: UnderlineInputBorder(
                       borderSide: BorderSide(
@@ -180,9 +187,13 @@ class _MyHomePageState extends State<MyHomePage> {
                 margin: const EdgeInsets.symmetric(horizontal: 30),
                 height: 30,
                 alignment: Alignment.center,
-                child: const TextField(
-                  style: TextStyle(color: Colors.white),
-                  decoration: InputDecoration(
+                child: TextField(
+                  onChanged:(value) {
+                    senha = value;
+                    print(senha);
+                  },
+                  style: const TextStyle(color: Colors.white),
+                  decoration: const InputDecoration(
                     enabledBorder: UnderlineInputBorder(
                       borderSide: BorderSide(
                         color: Color.fromARGB(255, 198, 21, 180),
