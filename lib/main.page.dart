@@ -10,8 +10,19 @@ class MainPage extends StatefulWidget {
 class _MainPageState extends State<MainPage> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: const Text('Minha App'),),
+    return SafeArea(
+      child: Scaffold(
+        appBar: AppBar(title: const Text('Minha App'),),
+        drawer: const Drawer(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              SizedBox(height: 30,),
+            Text('Dados cadastrais'),
+            ],
+          ),
+        ),
+      ),
     );
   }
 }
