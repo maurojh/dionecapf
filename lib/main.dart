@@ -61,6 +61,8 @@ class _MyHomePageState extends State<MyHomePage> {
   String email = '';
   String senha = '';
 
+  bool senhaEscondida = true;
+
   void _incrementCounter() {
     setState(() {
       // This call to setState tells the Flutter framework that something has
@@ -82,7 +84,7 @@ class _MyHomePageState extends State<MyHomePage> {
     // than having to individually change instances of widgets.
     return Scaffold(
       backgroundColor: const Color.fromARGB(255, 0, 0, 0),
-      body: SingleChildScrollView(  
+      body: SingleChildScrollView(
         // Center is a layout widget. It takes a single child and positions it
         // in the middle of the parent.
         child: ConstrainedBox(
@@ -153,7 +155,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 height: 30,
                 alignment: Alignment.center,
                 child: TextField(
-                  onChanged:(value) {
+                  onChanged: (value) {
                     email = value;
                     print(email);
                   },
@@ -188,12 +190,13 @@ class _MyHomePageState extends State<MyHomePage> {
                 height: 30,
                 alignment: Alignment.center,
                 child: TextField(
-                  onChanged:(value) {
+                  obscureText: senhaEscondida,
+                  onChanged: (value) {
                     senha = value;
                     print(senha);
                   },
-                  style: const TextStyle(color: Colors.white),
-                  decoration: const InputDecoration(
+                  style: TextStyle(color: Colors.white),
+                  decoration:  InputDecoration(
                     enabledBorder: UnderlineInputBorder(
                       borderSide: BorderSide(
                         color: Color.fromARGB(255, 198, 21, 180),
@@ -205,14 +208,19 @@ class _MyHomePageState extends State<MyHomePage> {
                       ),
                     ),
                     hintText: 'Senha',
-                    hintStyle: TextStyle(color: Colors.white),
-                    prefixIcon: Icon(
+                    hintStyle: const TextStyle(color: Colors.white),
+                    prefixIcon: const Icon(
                       Icons.lock,
                       color: Color.fromARGB(255, 198, 21, 180),
                     ),
-                    suffixIcon: Icon(
-                      Icons.visibility_off,
-                      color: Color.fromARGB(255, 198, 21, 180),
+                    suffixIcon: InkWell(
+                      onTap: () {
+                        senhaEscondida = !senhaEscondida;
+                      },
+                      child: Icon(
+                        senhaEscondida ? Icons.visibility_off : Icons.visibility,
+                        color: Color.fromARGB(255, 198, 21, 180),
+                      ),
                     ),
                   ),
                 ),
