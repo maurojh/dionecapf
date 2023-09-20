@@ -64,9 +64,11 @@ class _MyHomePageState extends State<MyHomePage> {
   bool senhaEscondida = true;
 
   TextEditingController controlaEmail = TextEditingController(
-    text: 'email@email.com',
+    text: '', // valor inicial
   );
-  TextEditingController controlaSenha = TextEditingController();
+  TextEditingController controlaSenha = TextEditingController(
+    text: '', // valor inicial
+  );
 
   void _incrementCounter() {
     setState(() {
@@ -202,14 +204,14 @@ class _MyHomePageState extends State<MyHomePage> {
                     //senha = value;
                     print(value);
                   },
-                  style: TextStyle(color: Colors.white),
+                  style: const TextStyle(color: Colors.white),
                   decoration:  InputDecoration(
-                    enabledBorder: UnderlineInputBorder(
+                    enabledBorder: const UnderlineInputBorder(
                       borderSide: BorderSide(
                         color: Color.fromARGB(255, 198, 21, 180),
                       ),
                     ),
-                    focusedBorder: UnderlineInputBorder(
+                    focusedBorder: const UnderlineInputBorder(
                       borderSide: BorderSide(
                         color: Color.fromARGB(255, 198, 21, 180),
                       ),
@@ -228,7 +230,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       },
                       child: Icon(
                         senhaEscondida ? Icons.visibility_off : Icons.visibility,
-                        color: Color.fromARGB(255, 198, 21, 180),
+                        color: const Color.fromARGB(255, 198, 21, 180),
                       ),
                     ),
                   ),
@@ -245,10 +247,16 @@ class _MyHomePageState extends State<MyHomePage> {
                   width: double.infinity,
                   child: TextButton(
                     onPressed: () {
+                      if(controlaEmail.text == 'email@email.com' &&
+                      controlaSenha.text == '123') {
+                        debugPrint('Login efetuado com sucesso!');
+                      } else {
+                        debugPrint('Erro ao efetuar login.');
+                      }
                       //print(email);
-                      print(controlaEmail.text);
+                      //print(controlaEmail.text);
                       //print(senha);
-                      print(controlaSenha.text);
+                      //print(controlaSenha.text);
                     },
                     style: const ButtonStyle(
                       shape: MaterialStatePropertyAll(
