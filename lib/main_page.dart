@@ -1,4 +1,7 @@
 import 'package:dionecapf/dados_cadastrais.dart';
+import 'package:dionecapf/pagina1.dart';
+import 'package:dionecapf/pagina2.dart';
+import 'package:dionecapf/pagina3.dart';
 import 'package:flutter/material.dart';
 
 class MainPage extends StatefulWidget {
@@ -73,12 +76,9 @@ class _MainPageState extends State<MainPage> {
         body: PageView(
           children: [
             // para mudar: dois dedos no mouse do Mac
-            Container(
-              color: Colors.blueGrey,
-            ),
-            Container(
-              color: Colors.amber,
-            ),
+            Pagina1Page(),
+            Pagina2Page(),
+            Pagina3Page(),
           ],
         ),
       ),
