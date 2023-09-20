@@ -1,3 +1,4 @@
+import 'package:dionecapf/main.page.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -205,7 +206,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     print(value);
                   },
                   style: const TextStyle(color: Colors.white),
-                  decoration:  InputDecoration(
+                  decoration: InputDecoration(
                     enabledBorder: const UnderlineInputBorder(
                       borderSide: BorderSide(
                         color: Color.fromARGB(255, 198, 21, 180),
@@ -229,7 +230,9 @@ class _MyHomePageState extends State<MyHomePage> {
                         });
                       },
                       child: Icon(
-                        senhaEscondida ? Icons.visibility_off : Icons.visibility,
+                        senhaEscondida
+                            ? Icons.visibility_off
+                            : Icons.visibility,
                         color: const Color.fromARGB(255, 198, 21, 180),
                       ),
                     ),
@@ -247,14 +250,26 @@ class _MyHomePageState extends State<MyHomePage> {
                   width: double.infinity,
                   child: TextButton(
                     onPressed: () {
-                      if(controlaEmail.text.trim() == 'email@email.com' &&
-                      controlaSenha.text.trim() == '123') {
-                        debugPrint('Login efetuado com sucesso!');
+                      if (controlaEmail.text.trim() == 'email@email.com' &&
+                          controlaSenha.text.trim() == '123') {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const MainPage(),
+                          ),
+                        );
+
+                        // ScaffoldMessenger.of(context).showSnackBar(
+                        //   const SnackBar(
+                        //       content: Text('Login efetuado com sucesso!')),
+                        // );
+                        //debugPrint('Login efetuado com sucesso!');
                       } else {
                         ScaffoldMessenger.of(context).showSnackBar(
-                          const SnackBar(content: Text('Erro ao efetuar login.')),
+                          const SnackBar(
+                              content: Text('Erro ao efetuar login.')),
                         );
-                        debugPrint('Erro ao efetuar login.');
+                        //debugPrint('Erro ao efetuar login.');
                       }
                       //print(email);
                       //print(controlaEmail.text);
@@ -311,11 +326,6 @@ class _MyHomePageState extends State<MyHomePage> {
             ],
           ),
         ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
       ), // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
